@@ -38,7 +38,7 @@ void SocketThread::onReadyRead()
 
     QByteArray line = socket->readAll();
 
-    QString filepath = "/daily_assistant_data";
+    QString filepath = QDir::currentPath() + "daily-assistant-data";
     if(QFile::exists(filepath)) {
         QFile::copy(filepath, filepath+".backup");
         QFile::remove(filepath);
