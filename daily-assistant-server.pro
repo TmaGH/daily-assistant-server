@@ -32,5 +32,4 @@ HEADERS += \
         server.h \
     socketthread.h
 
-RESOURCES += \
-    serverdata.qrc
+RESOURCES +=
