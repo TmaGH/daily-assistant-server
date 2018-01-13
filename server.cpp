@@ -22,7 +22,7 @@ Server::Server(quint16 port, QWidget *parent)
 void Server::start()
 {
     if (this->listen(host, port)) {
-        qDebug() << "The server is running on IP: " << host.toString() << ":" << this->serverPort();
+        qDebug() << "The server is running on IP: " << this->serverAddress().toString() << ":" << this->serverPort();
     } else {
         qDebug() << "Unable to start the server: " << this->errorString();
     }
@@ -30,7 +30,7 @@ void Server::start()
 
 void Server::incomingConnection(qintptr handle)
 {
-    qDebug() << "New connection received with handle" << handle;
+    qDebug() << "New connection received. Handle" << handle;
     SocketThread *thread = new SocketThread(handle);
     connect(thread, &SocketThread::finished, thread, &SocketThread::deleteLater);
 

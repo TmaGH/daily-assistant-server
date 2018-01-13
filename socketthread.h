@@ -14,17 +14,23 @@ public:
 protected:
     void run() override;
 
-signals:
-    void onFinishReceived();
+private:
+    bool backupData(QDataStream &in);
+    bool restoreData();
 
 private slots:
     void onReadyRead();
     void onDisconnected();
 
 private:
-    qintptr     socketDescriptor;
+    qintptr    socketDescriptor;
     QTcpSocket *socket;
-    qint32      blockSize;
+    qint64     blockSize;
+    qint8      operation;
+    QString    filepath;
+
+    enum OPERATIONS : char {NONE, BACKUP, RESTORE};
+
 };
 
 #endif // SOCKETTHREAD_H
