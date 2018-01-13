@@ -1,8 +1,7 @@
 Server component of daily assistant (https://github.com/TmaGH/daily-assistant)
 
 Features:
-- Receives data from clients and writes them to a file
+- Provides backup and restore functionality for one client (always saves to the same file)
 
 Up next:
-- Ability to restore data from server
-- Support for multiple clients connected at the same time
+- Support for multiple clients connected at the same time (different file for different client sessions)
