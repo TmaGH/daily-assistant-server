@@ -1,3 +1,5 @@
+Practice project that's not under development.
+
 Server component of daily assistant (https://github.com/TmaGH/daily-assistant)
 
 Features:
